@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let arr = [2, 4, 5, 3, 6, 7, 12, 15, 9, 11];
+    //Thuat toan sap xep cac phan tu cua mang
+    let n = arr.length - 1;
+    for (let i = n; i >= 0; i--){
+        for (let j = 0; j < i; j++){
+            if (arr[j] > arr[j+1]){
+                let storate = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = storate;
+            }
+        }
+    }
+    //Thuat toan tim kiem phan tu trong mang sau khi da sap xep cac phan tu cua mang
+    let value = prompt("Nhập phần tử muốn tìm kiếm");
+    let index = -1;
+    let left = 0;
+    let right = arr.length;
+    let mid = parseInt((left + right) / 2);
+    while (left <= right) {
+        let mid = parseInt((left + right) / 2);
+        if (arr[mid] == value) {
+            index = mid;
+            break;
+        }
+        else {
+            if (arr[mid] > value) {
+                right = mid - 1;
+            }
+            else {
+                left = mid + 1;
+            }
+        }
+    }
+    console.log(index);
+    document.write(arr.join(" ") + "<br>");
+    if (index !== -1) {
+        document.write("Phần tử bạn tìm kiếm là: " + value + " có index là: " + index);
+    }
+    else {
+        document.write("Phần tử bạn tìm kiềm không nằm trong mảng");
+    }
+</script>
+
+</html>

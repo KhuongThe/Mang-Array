@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let arr = [2, 4, 5, 3, 6, 7, 12, 15, 9, 11];
+    let n = arr.length - 1;
+    for (let i = n; i >= 0; i--){                  //Vong lap thu nhat de dam bao phan tu lon nhat sap xep vao vi tri cuoi mang va khong dua  phan tu nay vao so sanh trong vong lap lan sau nua
+        for (let j = 0; j < i; j++){               // Vong lap thu hai dam bao tim so lon nhat va sap xep vao vi tri cuoi cung cua mang
+            if (arr[j] > arr[j+1]){
+                let storate = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = storate;
+            }
+        }
+    }
+    console.log(arr);
+    document.write(arr);
+</script>
+
+</html>
